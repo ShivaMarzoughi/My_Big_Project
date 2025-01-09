@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style/style.css'%}">
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="countainer">
+        {% for name in courses_list %}
+        <section class="card">
+            <div class="card-photo">
+                <img src="{% static 'photos/py.png'%}" alt="photo by course">
+            </div>
+            <div class="texts">
+                <span class="course_name">{{name.course_name}}</span>
+                <p>{{name.short_description}}</p>
+                <div class="texts-icons">
+                    <div class="lectures">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.7256 20.2286V5.4172M11.7256 20.2286L10.2681 18.7712C9.44512 17.9481 8.32937 17.4858 7.16545 17.4858H3.49609C2.89016 17.4858 2.3999 16.9946 2.3999 16.3886V4.86863C2.3999 4.26269 2.89111 3.77148 3.49704 3.77148H7.71352C8.87745 3.77148 9.9937 4.23385 10.8167 5.05687L11.7256 5.96577L12.6345 5.05687C13.4575 4.23385 14.5738 3.77148 15.7377 3.77148H20.5028C21.1087 3.77148 21.5999 4.26269 21.5999 4.86863V16.3886C21.5999 16.9946 21.1087 17.4858 20.5028 17.4858H16.2863C15.1224 17.4858 14.0061 17.9481 13.1831 18.7712L11.7256 20.2286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                        <span class="text_lectures">{{name.number_of_lecture}} Lectures</span>
+                    </div>
+                    <div class="time">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.625 14.25L11.25 13.125V8.42087M20.25 12C20.25 7.02944 16.2206 3 11.25 3C6.27944 3 2.25 7.02944 2.25 12C2.25 16.9706 6.27944 21 11.25 21C14.5813 21 17.4898 19.1901 19.046 16.5M17.7811 11.0123L20.0311 13.2623L22.2811 11.0123" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                        <span class="times-of-course">{{name.time_of_course}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit">Start for free</button>
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
