@@ -38,10 +38,3 @@ class Course_Details(models.Model):
 
 
 
-# جدولی برای جزییات سرفصل دوره
-class VideosOfLesson(models.Model):
-    name_of_course_detail=models.ForeignKey(Course_Details,on_delete=models.CASCADE)
-    video_url = models.URLField()
-
-    def __str__(self):
-        return self.video_url

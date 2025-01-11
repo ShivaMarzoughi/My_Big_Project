@@ -2,21 +2,223 @@
     padding: 0;
     margin: 0;
     box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
     
 }
 
 :root {
-    --font-color:#ffff;
+    --font-color:#E0E2FB;
     --btn-color:#F476B8;
+    --header-font-siza:16px;
+    --font-family:'Inter', sans-serif;
 
 }
 body{
     background:#050A36;
-    display: flex;
-    justify-content: center;  /* افقی وسط می‌کند */
-    align-items: center;      /* عمودی وسط می‌کند */
-    height: 100vh;   
+    display: flex; /* فعال کردن فلکس‌باکس */
+    justify-content: center; /* وسط‌چین افقی */
+    align-items: center; /* وسط‌چین عمودی */
+    flex-direction: column;
+
 }
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%; /* عرض ۱۰۰٪ */
+    height: 100%; /* ارتفاع ۱۰۰٪ */
+}
+.my-header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 1140px;
+    height: 80px;
+}
+.logo-items{
+    display: flex;
+    align-items: center;
+    gap: 62px;
+}
+.logo{
+    width: 123px;
+    height: 80px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+.meno-items{
+    font-family: 'Inter', sans-serif;
+    font-size: var(--header-font-siza);
+    color:var(--font-color);
+    padding: 10px;
+    
+}
+.meno-items ul{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+.signin-up a{
+    font-family: 'Inter', sans-serif;
+    color:var(--font-color);
+    font-size: var(--header-font-siza);
+    padding: 10px 25px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.hero-section{
+    width:1140px ;
+    /* background-color: #fff; */
+    height: 450px;
+    display: flex;
+    position: relative;
+
+}
+.left-hero{
+    /* background-color: #ff7e7e; */
+    width: 50%;
+    height: 100%;
+}
+.left-hero h1{
+    font-family:var(--font-family);
+    font-size: 55px;
+    color: var(--font-color);
+    padding-top: 170px;
+    padding-bottom: 30px;
+}
+.left-hero p{
+    font-family:var(--font-family);
+    font-size: 18px;
+    color: var(--font-color);
+    width:450px;
+    height:87px ;
+
+}
+.right-lero{
+    width: 50%;
+
+}
+.right-lero img{
+    width: 560px;
+    position: absolute;
+    left: 125px;
+}
+.hand{
+    width: 600px;
+    position: absolute;
+    left: 600px;
+}
+.ball{
+    width: 73px;
+    height: 76px;
+    position: absolute;
+    top:100px;
+    left: 600px;
+
+}
+
+
+.hero-btn-text{
+    /* background-color: #fff; */
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero-btn{
+    padding: 20px 34px;
+    background: rgb(223,49,153);
+    background: linear-gradient(90deg, rgba(223,49,153,1) 0%, rgba(22,34,122,1) 100%);
+    color: var(--font-color);
+    font-family:var(--font-family);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-weight: bold;
+}
+.text-number{
+    width: 436px;
+    height: 60px;
+
+}
+.numbers-icons{
+    display: flex;
+    color: #ffffff;
+    gap: 60px;
+    font-family:var(--font-family);
+}
+.numbers-and-texts{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.number{
+    font-weight: bold;
+    font-size: 24px;
+}
+.Backend-Developer-Roadmap{
+    /* background-color: #fff; */
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 120px;
+}
+.Backend-Developer-Roadmap h2{
+    font-size: 45px;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-weight: bold;
+    width: 468px;
+}
+.roadmap-img{
+    /* background-color: #fff; */
+    width: 1140px;
+    height: 761px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.roadmap-img img{
+    width: 100%;
+}
+.Popular-Courses{
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.Popular-Courses h3{
+    font-size: 35px;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-weight: bold;
+    width: 468px;
+}
+.cards{
+    /* background-color: #fff; */
+    width: 1140px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+
 .circle {
     width: 300px;
     height: 300px;
@@ -24,8 +226,8 @@ body{
     background: rgb(244, 118, 183,0.5);
     filter: blur(200px);
     position: absolute;
-    top:50px;
-    left: 0px;
+    top:300px;
+    left: 250px;
     box-shadow: 0 0 200px rgb(255, 0, 0.7);
     -webkit-filter: blur(200px);
 }
@@ -33,17 +235,8 @@ body{
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-.countainer{
-    display: flex;
-    flex-wrap: wrap; /* اجازه به کارت‌ها برای رفتن به خط بعد */
-    gap: 20px; /* فاصله بین کارت‌ها */
-    justify-content: center; /* وسط‌چینی افقی */
-}
-
-
-
 .card{
+    /* background-color: #3e3e3e; */
     font-family: 'Inter', sans-serif;
     background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid white;
@@ -132,7 +325,7 @@ body{
 .detail{
     background-color: rgba(255, 255, 255, 0.4);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-family: 'Inter', sans-serif;
     color: #ffff;
     border: 1px solid white;
@@ -161,5 +354,70 @@ body{
 .icon-time{
     display: flex;
     align-items: center;
-    gap: 4px;
+}
+
+/* -------------------------------- */
+.signup{
+    margin-top: 100px;
+
+}
+.sigup-phto{
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-weight: bold;
+    width: 400px;
+    color: var(--font-color);
+}
+
+.inputs {
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+.submit{
+    color: #E0E2FB;
+    width: 100%;
+    padding: 16px 20px;
+    margin: 8px 0;
+    margin-top: 30px;
+    border-radius: 4px;
+    border: none;
+    background: linear-gradient(90deg, rgba(223,49,153,1) 0%, rgba(22,34,122,1) 100%);
+}
+input::placeholder{
+    font-family: var(--font-family);
+    color:#b8b8b8;
+}
+.form-photo{
+    width: 296px;
+    height: 360px;
+
+}
+.form-photo img{
+    width: 100%;
+    height: 100%;
+}
+.forgot-pass{
+    font-size:13px;
+    color:#DF3199;
+    margin-left: 260px;
+    font-weight: 300;
+}
+.have-account{
+    font-weight: 300;
+    font-size:13px;
+    color:#DF3199;
+    display: flex;
+    justify-content: center;
 }

@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style/style.css'%}">
+
+</head>
+<body>
+
+    <!-- my header -->
+    <header class="header">
+        <section class="my-header">
+            <section class="logo-items">
+                <div class="logo">
+                    <img src="{% static 'photos/logo.png' %}" alt="logo" class="site-logo">
+                </div>
+                <div class="meno-items">
+                    <ul>
+                        <li>Home</li>
+                        <li>Courses</li>
+                        <li>Books</li>
+                        <li>Projects</li>
+                        <li>Exercise</li>
+                    </ul>
+                </div>
+            </section>
+            <div class="signin-up">
+                <a href="{% url 'signup'%}">Sign Up</a>
+            </div>
+
+
+
+        </section>
+    </header>
+    <!-- end my header -->
+
+
+    {% block body%}
+
+    {% endblock %}
+</body>
+</html>

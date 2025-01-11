@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my_apps
+    'home',
     'courses',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,10 @@ STATIC_ROOT = BASE_DIR / 'courses'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+AUTH_USER_MODEL = 'accounts.Account'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% load static %}
+<body>
+    {% block body%}
+    <section class="signup">
+        <div class="sigup-phto">
+            <div class="form-photo">
+                <img src="{% static 'photos/signin-up.png'%}" alt="sign in up photo">
+            </div>
+
+
+            <form method="post" class="form">
+                {{ form.hidden_fields }}
+                {{ form.non_field_errors }}
+
+                {% csrf_token %}
+                <label for="username">Username</label>
+                {{ form.username }}
+    
+                <label for="email">Email</label>
+                {{ form.email }}
+    
+                <label for="password1">Password</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <ul>
+                        {% for error in form.password1.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+    
+                <label for="password2">Confirm Password</label>
+                {{ form.password2 }}
+                <a class="forgot-pass"    href="#">forgot your password ?</a>
+                <input type="submit" value="Signup" class="submit">
+                <a class="have-account"    href="#">Already have an account? Sign In</a>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+
+
+
+
+
