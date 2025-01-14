@@ -29,8 +29,9 @@ class CoursesCardModel(models.Model):
 class Course_Details(models.Model):
     name_of_course=models.ForeignKey(CoursesCardModel,on_delete=models.CASCADE)
     title=models.CharField(max_length=50)
-    number_of_video=models.IntegerField()
-    time_of_course=models.IntegerField()
+    time_of_video=models.IntegerField()
+    # file_url=models.FileField(upload_to='download_file/%Y/%m/%d')
+    url_file=models.URLField(verbose_name="لینک دانلود",null=True, blank=True)
 
     def __str__(self):
         return self.title

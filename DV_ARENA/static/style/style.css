@@ -63,6 +63,10 @@ body{
     align-items: center;
     gap: 28px;
 }
+.meno-items ul a{
+    color:var(--font-color);
+
+}
 .signin-up a{
     font-family: 'Inter', sans-serif;
     color:var(--font-color);
@@ -235,9 +239,9 @@ body{
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-.card{
+/* .card{ */
     /* background-color: #3e3e3e; */
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Inter', sans-serif;
     background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid white;
     width: 350px;
@@ -249,7 +253,20 @@ body{
     -webkit-border-radius: 24px;
     -moz-border-radius: 24px;
     -ms-border-radius: 24px;
-    -o-border-radius: 24px;
+    -o-border-radius: 24px; */
+/* } */
+.card {
+    font-family: 'Inter', sans-serif;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid white;
+    width: 350px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* آیتم‌ها مرتب پخش بشن */
+    padding: 22px 32px;
+    border-radius: 24px;
+
 }
 .card-photo{
     display: flex;
@@ -258,7 +275,7 @@ body{
     height: 50%;
     width: 100%;
     margin-bottom: 16px;
-    border-bottom: 1px solid rgb(255, 255, 255);
+    /* border-bottom: 1px solid rgb(255, 255, 255); */
 }
 .card-photo img{
 
@@ -268,6 +285,7 @@ body{
 .texts{
     display: flex;
     flex-direction: column;
+    text-align: justify; 
     gap: 28px;
 }
 .course_name{
@@ -278,6 +296,8 @@ body{
 .texts p{
     font-size: 16px;
     color: var(--font-color);
+    width: 100%;  /* عرض مشخص */
+    word-wrap: break-word;  /* متن طولانی به چند خط تقسیم می‌شود */
 
 }
 .texts-icons{
@@ -307,13 +327,13 @@ body{
     justify-content: center;
     margin-top: 24px;
 }
-.btn button{
+.btn a {
     background-color:var(--btn-color);
     color: var(--font-color);
     border: none;
     font-weight: bold;
     font-size: 16px;
-    padding: 8px 94px;
+    padding: 8px 92px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -325,7 +345,7 @@ body{
 .detail{
     background-color: rgba(255, 255, 255, 0.4);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: 'Inter', sans-serif;
     color: #ffff;
     border: 1px solid white;
@@ -338,7 +358,7 @@ body{
     align-items: center;
     gap: 8px;
 }
-.header{
+.text_title{
     font-weight: bold;
 }
 .time-video{
@@ -354,6 +374,7 @@ body{
 .icon-time{
     display: flex;
     align-items: center;
+    gap: 4px;
 }
 
 /* -------------------------------- */
@@ -385,6 +406,7 @@ body{
     border: 1px solid #ffffff;
     border-radius: 4px;
 }
+
 .submit{
     color: #E0E2FB;
     width: 100%;
@@ -420,4 +442,29 @@ input::placeholder{
     color:#DF3199;
     display: flex;
     justify-content: center;
+}
+.error{
+    color: #ef3b3b;
+    font-weight: 300;
+}
+
+.hello-login{
+    font-family: var(--font-family);
+    color: #E0E2FB;
+}
+
+/* ---------------------- */
+.card_and_details_in_detailpage{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin-top: 100px;
+
+}
+.cards_for_detailpage{
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }

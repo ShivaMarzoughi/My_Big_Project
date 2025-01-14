@@ -20,7 +20,7 @@
                 </div>
                 <div class="meno-items">
                     <ul>
-                        <li>Home</li>
+                        <li><a href="{%url 'home'%}">Home</a></li>
                         <li>Courses</li>
                         <li>Books</li>
                         <li>Projects</li>
@@ -28,17 +28,16 @@
                     </ul>
                 </div>
             </section>
-            <div class="signin-up">
-                <a href="{% url 'signup'%}">Sign Up</a>
-            </div>
-
-
-
+            {% if user.is_authenticated and not user.is_superuser %}
+                <span class="hello-login">Hello  {{user}}</span>
+            {% else %}
+                <div class="signin-up">
+                    <a href="{% url 'signup'%}">Sign Up</a>
+                </div>
+            {% endif%}
         </section>
     </header>
     <!-- end my header -->
-
-
     {% block body%}
 
     {% endblock %}

@@ -1,23 +1,52 @@
+{% extends 'base.html'%}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'style/style.css'%}">
-</head>
-<body>
-    <h1>hello</h1>
+
+{% block body%}
+<!-- این دیو بعدا بر حسب نیاز اضافه شد -->
+<div class="card_and_details_in_detailpage">
+
+
+<!-- بخش خود کارت -->
+<div class="cards_for_detailpage">
+
+        <section class="card">
+        <div class="card-photo">
+            <img src="{{ course_card.card_photo.url }}" alt="photo by course">
+        </div>
+        <div class="texts">
+            <span class="course_name">{{course_card.course_name}}</span>
+            <p>{{course_card.long_description}}</p>
+            <div class="texts-icons">
+                <div class="lectures">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.7256 20.2286V5.4172M11.7256 20.2286L10.2681 18.7712C9.44512 17.9481 8.32937 17.4858 7.16545 17.4858H3.49609C2.89016 17.4858 2.3999 16.9946 2.3999 16.3886V4.86863C2.3999 4.26269 2.89111 3.77148 3.49704 3.77148H7.71352C8.87745 3.77148 9.9937 4.23385 10.8167 5.05687L11.7256 5.96577L12.6345 5.05687C13.4575 4.23385 14.5738 3.77148 15.7377 3.77148H20.5028C21.1087 3.77148 21.5999 4.26269 21.5999 4.86863V16.3886C21.5999 16.9946 21.1087 17.4858 20.5028 17.4858H16.2863C15.1224 17.4858 14.0061 17.9481 13.1831 18.7712L11.7256 20.2286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                    <span class="text_lectures">{{course_card.number_of_lecture}} Lectures</span>
+                </div>
+                <div class="time">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.625 14.25L11.25 13.125V8.42087M20.25 12C20.25 7.02944 16.2206 3 11.25 3C6.27944 3 2.25 7.02944 2.25 12C2.25 16.9706 6.27944 21 11.25 21C14.5813 21 17.4898 19.1901 19.046 16.5M17.7811 11.0123L20.0311 13.2623L22.2811 11.0123" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                    <span class="times-of-course">{{course_card.time_of_course}}</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<!-- بخش جزییات کارت -->
+
     <div class="detail-box">
         {% for detail in course_details %}
             <div class="detail">
                 <div class="text-icon">
-                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.64678 4.64678C6.84053 4.45303 7.15928 4.45303 7.35303 4.64678L12.353 9.64678C12.5468 9.84053 12.5468 10.1593 12.353 10.353C12.1593 10.5468 11.8405 10.5468 11.6468 10.353L6.9999 5.70615L2.35303 10.353C2.15928 10.5468 1.84053 10.5468 1.64678 10.353C1.45303 10.1593 1.45303 9.84053 1.64678 9.64678L6.64678 4.64678Z" fill="#FDECF3"/>
-                    </svg>
-                    <span class="header">
+                    </svg> -->
+                    <span class="text_title">
                         {{detail.title}}
                     </span>
                 </div>
@@ -26,17 +55,22 @@
                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.0498 6V13C15.0498 13.5531 14.6029 14 14.0498 14H2.0498C1.49668 14 1.0498 13.5531 1.0498 13V6H15.0498ZM15.0498 5H12.0061L14.7342 2.27187C14.9279 2.45312 15.0498 2.7125 15.0498 3V5ZM7.25605 5L10.2561 2H13.5936L10.5936 5H7.25605ZM5.84043 5H2.50605L5.50605 2H8.84355L5.84355 5H5.84043ZM2.0498 2H4.09355L1.09355 5H1.0498V3C1.0498 2.44687 1.49668 2 2.0498 2ZM16.0498 5V3C16.0498 1.89688 15.1529 1 14.0498 1H2.0498C0.94668 1 0.0498047 1.89688 0.0498047 3V5V5.5V6V13C0.0498047 14.1031 0.94668 15 2.0498 15H14.0498C15.1529 15 16.0498 14.1031 16.0498 13V6V5.5V5ZM6.80293 7.06875C6.64981 6.97813 6.45605 6.97813 6.2998 7.06563C6.14355 7.15313 6.04668 7.31875 6.04668 7.5V12.5C6.04668 12.6781 6.14355 12.8438 6.2998 12.9344C6.45605 13.025 6.64668 13.0219 6.80293 12.9312L11.0529 10.4312C11.2061 10.3406 11.2998 10.1781 11.2998 10C11.2998 9.82187 11.2061 9.65938 11.0529 9.56875L6.80293 7.06875ZM9.8123 10L7.0498 11.625V8.375L9.8123 10Z" fill="white"/>
                         </svg>
-                        <span>{{detail.number_of_video}} videos</span>
+                        <!-- <span>{{detail.number_of_video}} see videos</span> -->
+                        <!-- <span>{{detail.number_of_video}} see videos</span> -->
+                        <a href="{{detail.url_file}}" target="_blank" rel="noopener noreferrer">Watch Video</a>
+
+
                     </div>
                     <div class="icon-time">
                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.5 8C15.5 9.85652 14.7625 11.637 13.4497 12.9497C12.137 14.2625 10.3565 15 8.5 15C6.64348 15 4.86301 14.2625 3.55025 12.9497C2.2375 11.637 1.5 9.85652 1.5 8C1.5 6.14348 2.2375 4.36301 3.55025 3.05025C4.86301 1.7375 6.64348 1 8.5 1C10.3565 1 12.137 1.7375 13.4497 3.05025C14.7625 4.36301 15.5 6.14348 15.5 8ZM0.5 8C0.5 10.1217 1.34285 12.1566 2.84315 13.6569C4.34344 15.1571 6.37827 16 8.5 16C10.6217 16 12.6566 15.1571 14.1569 13.6569C15.6571 12.1566 16.5 10.1217 16.5 8C16.5 5.87827 15.6571 3.84344 14.1569 2.34315C12.6566 0.842855 10.6217 0 8.5 0C6.37827 0 4.34344 0.842855 2.84315 2.34315C1.34285 3.84344 0.5 5.87827 0.5 8ZM8 3.5V8C8 8.16562 8.08438 8.32187 8.22188 8.41562L11.2219 10.4156C11.4531 10.5687 11.7625 10.5062 11.9156 10.2781C12.0687 10.05 12.0062 9.7375 11.7781 9.58438L9 7.73125V3.5C9 3.225 8.775 3 8.5 3C8.225 3 8 3.225 8 3.5Z" fill="white"/>
                         </svg>
-                        <span>{{detail.time_of_course}}h</span>
+                        <span>{{detail.time_of_video}}m</span>
                     </div>
                 </div>
             </div>
         {% endfor %}
     </div>
-</body>
-</html>
+
+</div>
+{% endblock %}

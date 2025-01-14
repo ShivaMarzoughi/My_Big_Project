@@ -7,7 +7,7 @@
             <div class="form-photo">
                 <img src="{% static 'photos/signin-up.png'%}" alt="sign in up photo">
             </div>
-            <form method="post" class="form" action="{% url 'signup' %}">
+            <form method="post" class="form">
                 {% csrf_token %}
                 {% if form.errors %}
                 <div class="error">
@@ -21,14 +21,8 @@
                 <label for="username">Username</label>
                 {{ form.username }}
 
-                <label for="email">Email</label>
-                {{ form.email }}
-
                 <label for="password1">Password</label>
-                {{ form.password1 }}
-
-                <label for="password2">Confirm Password</label>
-                {{ form.password2 }}
+                {{ form.password }}
 
                 <a class="forgot-pass"    href="#">forgot your password ?</a>
                 <button type="submit" class="submit">Signup</button>
@@ -39,3 +33,10 @@
     </section>
 
 {% endblock %}
+
+
+<form method="post" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Signup</button>
+</form>
