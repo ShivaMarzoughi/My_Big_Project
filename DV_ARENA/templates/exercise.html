@@ -1,0 +1,93 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+
+
+
+
+
+
+
+
+
+{% block body%}
+
+    <div class="baner">
+        <img src="{% static 'photos/baner.png'%}" alt="baner">
+    </div>
+
+
+
+
+
+    <section class="exercise-box">
+        <!-- box header -->
+        <div class="boxheader">
+            <div class="exercise-box-title">
+                <span>title</span>
+            </div>
+            <div class="exercise-box-texts">
+                <span class="solution">solution</span>
+                <div class="difficultytext-icon">
+                    <form class="level-of-q" method="GET" action="{% url 'Questions' %}" id="myForm">
+                        <select name="level" id="level_q" onchange="autoSubmit()">
+                            <!-- <option   value="">Select Level</option>
+                            <option value="">All</option>
+                            <option   value="Easy">Easy</option>
+                            <option   value="Difficult">Difficulty</option>
+                            <option   value="Intermediate">Intermediate</option> -->
+
+                            <option value="">All</option>
+                            <option value="Easy" {% if request.GET.level == 'Easy' %}selected{% endif %}>Easy</option>
+                            <option value="Difficult" {% if request.GET.level == 'Difficult' %}selected{% endif %}>Difficult</option>
+                            <option value="Intermediate" {% if request.GET.level == 'Intermediate' %}selected{% endif %}>Intermediate</option>
+                        </select>
+                    </form>
+                    <!-- <span>difficulty</span> -->
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12.0008 14.58L17 10" stroke="#E0E2FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> -->
+                </div>
+                <span class="response-status">
+                    response status
+                </span>
+            </div>
+        </div>
+        <!-- end box header -->
+{% for question  in question_list %}
+        <!-- box exercises -->
+        <div class="boxheader-q">
+            <div class="exercise-box-title-q">
+                <span class="title">{{question.title}}</span>
+            </div>
+            <div class="exercise-box-texts-q">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.2996 21.5998H5.4996C4.17411 21.5998 3.0996 20.5253 3.09961 19.1998L3.0997 4.79989C3.09971 3.47441 4.17422 2.3999 5.4997 2.3999H16.3C17.6255 2.3999 18.7 3.47442 18.7 4.7999V11.3999M13.9 18.1999L16.1 20.3999L20.9 15.5997M7.29998 7.1999H14.5M7.29998 10.7999H14.5M7.29998 14.3999H10.9" stroke="#E0E2FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                    
+                <div class="difficultytext-icon">
+
+                    <span class="difficulty">{{question.level}}</span>
+                </div>
+                <span class="response-status">{{question.response_status}}</span>
+            </div>
+        </div>
+    </section>
+
+{% endfor %}
+<div class="space">
+        
+</div>
+
+<!-- js -->
+<script>
+    function autoSubmit() { 
+        document.getElementById("myForm").submit(); 
+    } 
+</script>
+<!-- <script>
+    function autoSubmit() {
+        document.forms[0].submit();
+    }
+</script> -->
+{% endblock %}
